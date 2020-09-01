@@ -19,16 +19,25 @@ It secures TurboVNC connection using SSH port forwarding.
 
 - SSH only:
 ```python3
-!pip install git+https://github.com/demotomohiro/remocolab.git
+!pip install git+https://github.com/sajeevan16/remocolab.git
 import remocolab
+remocolab.ngrok_token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 remocolab.setupSSHD()
 ```
 
 - SSH and TurboVNC:
 ```python3
-!pip install git+https://github.com/demotomohiro/remocolab.git
+!pip install git+https://github.com/sajeevan16/remocolab.git
 import remocolab
+#remocolab.ngrok_region ="ap"
+remocolab.ngrok_token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 remocolab.setupVNC()
+
+# function ClickConnect(){
+# console.log("Working"); 
+# document.querySelector("colab-toolbar-button#connect").click() 
+# }
+# setInterval(ClickConnect,60000)
 ```
 
 3. (Optional) If you want to run OpenGL applications or any programs that use GPU,
