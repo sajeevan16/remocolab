@@ -100,7 +100,7 @@ def _check_gpu_available():
     print("You might get better GPU by reseting the runtime.")
   else:
     return True
-
+  return True
   return IPython.utils.io.ask_yes_no("Do you want to continue? [y/n]")
 
 def _setupSSHDImpl(ngrok_token, ngrok_region, is_VNC):
@@ -193,7 +193,7 @@ def _setupSSHDMain(ngrok_region, check_gpu_available, is_VNC):
   print("Copy&paste your tunnel authtoken from https://dashboard.ngrok.com/auth")
   print("(You need to sign up for ngrok and login,)")
   #Set your ngrok Authtoken.
-  ngrok_token = getpass.getpass()
+  # ngrok_token = getpass.getpass()
 
   if not ngrok_region:
     print("Select your ngrok region:")
@@ -204,7 +204,8 @@ def _setupSSHDMain(ngrok_region, check_gpu_available, is_VNC):
     print("sa - South America (Sao Paulo)")
     print("jp - Japan (Tokyo)")
     print("in - India (Mumbai)")
-    ngrok_region = region = input()
+    
+    ngrok_region = region = "ap" #input()
 
   return (True, _setupSSHDImpl(ngrok_token, ngrok_region, is_VNC))
 
