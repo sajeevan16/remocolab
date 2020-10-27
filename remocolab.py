@@ -344,3 +344,4 @@ def setupVNC(ngrok_region = None, check_gpu_available = True):
     msg += _setupVNC()
 
   print(msg)
+  return msg
